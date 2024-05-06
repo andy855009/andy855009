@@ -1,0 +1,540 @@
+<!--include bpm.js-->
+<script src="Object/Lib/js/bpm.js"></script>
+
+<!--include Newtype_Global-->
+(-:NewTypeCom:Newtype_Global_JS:-)
+(-:NewTypeCom:Newtype_Global_JSDeco:-)
+
+
+<!-- include SIRTEC_G_MPR -->
+<script src="SIRTEC_G_MPR_JS.js?v=2"></script>
+
+<!--fontawesome-->
+<link rel="stylesheet" href="Object/fontawesome/css/fontawesome.min.css">
+<script src="Object/fontawesome/js/fontawesome.min.js"></script>
+
+(-:NewTypeCom:Table_CSS:-)
+
+
+
+<!--jquery-te-->
+<!--<script src="Object/Lib/plugin/jquery-te-1.4.0/jquery-te-1.4.0.min.js" charset="utf-8"></script>-->
+<!--<link rel="stylesheet" href="Object/Lib/plugin/jquery-te-1.4.0/jquery-te-1.4.0.css">-->
+<!--<link rel="stylesheet" href="Object/Lib/plugin/demo.css">-->
+<!-- company_info -->
+
+<div hidden>
+    <input name='RequisitionID' type='text' class='Default'>
+    <input name='ORequisitionID' type='text' class='Default'>
+    <script>
+		var ORequisitionID = '(-:NewTypeFUNC:Request("RequisitionID"):-)';
+		$('[name=ORequisitionID]').val(ORequisitionID);
+    </script>
+</div>
+
+<div>
+    <table width="100%" border="0">
+        <tr>
+            <td align="center">
+                <h1>協益集團設備請購單</h1>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <font id="COMPANYNAME" size="6"></font>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class='form'>
+    <div id="applicant">
+        <!-- HTML Document-->
+        <span id="tab-1" class="tab-show">表單資訊</span>
+        <!-- 頁籤按鈕 -->
+        <div id="tab">
+            <ul>
+                <li><a href="#tab-1">表單資訊</a></li>
+            </ul>
+            <!-- 頁籤的內容區塊 -->
+            <div class="tab-content-1 content-header">
+                <br>
+                <table>
+                    <tr>
+                        <th><font>表單單號</font></th>
+                        <td colspan="3"><input type="text" name="FORM_ID"></font></td>
+                        <th><font>表單日期</font></th>
+                        <td><input type="text" name="ApplicantDateTime"></td>
+                    </tr>
+                    <tr>
+                        <th><font>公司</font></th>
+                        <!--<td><font name="COMPANYNAME"></font></td>-->
+                        <td><input type="text" name="COMPANYNAME" readonly></font></td>
+                        <th><font>表單重要性</font></th>
+                        <td colspan="3">
+                            <div id="Priority">
+                                <input type="text" name="Priority">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><font>申請單位</font></th>
+                        <td>
+                            <input type="text" name="ApplicantDept">
+                            <input type="text" name="ApplicantDeptName">
+                        </td>
+                        <th><font>公司別</font></th>
+                        <td><span id="OPTION_COMPANY_PREFIX_CODE"><input type="text" name="COMPANY_PREFIX_CODE"></span></td>
+                        <th><font>公司代號</font></th>
+                        <td><input type="text" name="company_code" readonly></td>
+                    </tr>
+                    <tr>
+                        <th><font>申請人</font></th>
+                        <td>
+                            <input type="text" name="ApplicantID">
+                            <input type="text" name="ApplicantName">
+                        </td>
+                        <th><font>填單人</font></th>
+                        <td>
+                            <input type="text" name="FillerID">
+                            <input type="text" name="FillerName">
+                        </td>
+                        <th></th>
+                        <td></td>
+                    </tr>
+                </table>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <div id="applicant-pr">
+        <!--  聯絡內容  -->
+        <span id="tab-1" class="tab-show">請購單</span>
+        <!--  頁籤按鈕  -->
+        <div id="tab">
+            <ul>
+                <li><a href="#tab-1">請購單</a></li>
+            </ul>
+            <!-- 頁籤的內容區塊 -->
+            <div class="tab-content-1 content-header">
+                <br>
+                <table class="Table_D">
+                    <tbody>
+                        <tr>
+                            <th>
+                                <font>費用類型</font>
+                            </th>
+                            <td>
+                                <div><input type="text" name="EXPENSE_CATEGORY"></div>
+                                <input type="text" name="EXPENSE_CATEGORY_COMMENT" hidden>
+                            </td>
+                            <th>
+                                <!--<font>預算餘額</font>-->
+                                <font>請購預估費用</font>
+                            </th>
+                            <td>
+                                <input type="text" name="BUDGET_SURPLUS">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <font>採購人員</font>
+                            </th>
+                            <td>
+                                <input type="text" name="PO_MEMBERID">
+                                <input type="text" name="PO_MEMBERNAME">
+                            </td>
+                            <th>
+                                <font>總費用</font>
+                            </th>
+                            <td>
+                                <input type="text" name="TOTAL_AMOUNT" readonly>
+                            </td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <th>
+                                <font>會簽人員</font>
+                            </th>
+                            <td colspan='3'>
+                                <input type='text' name='MutiSign_id' hidden>
+                                <input type='text' name='MutiSign_name' readonly>
+                                <input type='button' name='MutiSign' value='選擇'>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="detail" class="Table_D">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%;">
+                                <input type="checkbox" id="itemBoxAll" class="default">
+                                <br>
+                                <button type="button" id="add"><i class="fas fa-plus" color="green"></i></button>
+                                <button type="button" id="del"><i class="fas fa-minus" color="red"></i></button>
+                            </th>
+                            <th style="width: 5%;">項目</th>
+                            <th>類別</th>
+                            <th>品名</th>
+                            <th>規格</th>
+                            <th>數量</th>
+                            <th>要求交貨日期</th>
+                            <th>用途說明</th>
+                            <th>預估預算</th>
+                            <th>請購單位</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr name="detailItem" id="detailItem">
+                            <th style="width: 5%;text-align:center"><input type="checkbox" name="itemBox" class="default"></th>
+                            <td><input type="text" name="Num" class="default"></td>
+                            <td style="padding: 3px;"><input type='text' name='Product_Category' readonly hidden></td>
+                            <td style="padding: 3px;"><input type='text' name="Product_Name"></td>
+                            <td style="padding: 3px;"><input type='text' name="Product_Specification"></td>
+                            <td style="padding: 3px;"><input type='text' name="Product_Quantity"></td>
+                            <td style="padding: 3px;"><input type='text' name="Required_Delivery_Date" id="Required_Delivery_Date" class="default"></td>
+                            <td style="padding: 3px;"><input type='text' name="Instructions_For_Use"></td>
+                            <td style="padding: 3px;"><input type='number' name="Pre_Budget"></td>
+                            <td style="padding: 3px;">
+                                <input type='text' name='PR_DeptID' readonly hidden>
+                                <input type='text' name='PR_DeptNAME' style='width:70%' readonly>
+                                <input type='button' name='PR_Dept_buttom' value='選擇' style='width:30pt'>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <div id="applicant-po">
+        <!--聯絡內容-->
+        <span id="tab-1" class="tab-show">採購單</span>
+        <!-- 頁籤按鈕 -->
+        <div id="tab">
+            <ul>
+                <li><a href="#tab-1">採購單</a></li>
+            </ul>
+            <!-- 頁籤的內容區塊 -->
+            <div class="tab-content-1 content-header">
+                <h1 width="100%" align="center">採購單</h1>
+                <div id="POContent"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<style>
+    .form td {
+        text-align: left;
+    }
+
+    .form input[readonly] {
+        background-color: #f5f5f5;
+    }
+
+    .form textarea[readonly] {
+        background-color: #f5f5f5;
+        resize: none;
+    }
+
+    .form input[type=text], input[type=number] {
+        margin: 1;
+        border-radius: .28571429rem;
+        border: 1px solid rgba(180,180,180);
+        padding: 4 6;
+        width: 80%;
+        height: 30px;
+    }
+
+    .form select {
+        margin: 1;
+        border-radius: .28571429rem;
+        border: 1px solid rgba(180,180,180);
+        padding: 4 6;
+        width: 100%;
+        height: 30px;
+    }
+
+    .form textarea {
+        margin: 1;
+        border-radius: .28571429rem;
+        border: 1px solid rgba(180,180,180);
+        padding: 4 6;
+        width: 90%;
+        height: 75px;
+        resize: none;
+    }
+
+    .form input[type=button]:active {
+        boder: 1 px solid #f5f5f5;
+        background-color: #007fff;
+    }
+
+    .form input[type=number] {
+        text-align: right;
+    }
+
+    /* content-header*/
+    .content-header > table {
+        background-color: #ffffff;
+        border-collapse: collapse;
+        border-radius: .28571429rem;
+        border: 1px solid rgba(180,180,180);
+        table-layout: fixed;
+        width: 100%;
+        word-wrap: break-word;
+    }
+
+        .content-header > table > tbody > tr > th {
+            width: 100px;
+            font-size: 14px;
+            padding: 5;
+            background-color: #ECF5FF;
+            border: 1px solid rgba(180,180,180);
+            text-align: left;
+            vertical-align: center;
+            font-family: 微軟正黑體;
+            /*width: 10%;*/
+        }
+
+        .content-header > table > tbody > tr > td {
+            border: 1px solid rgba(180,180,180);
+            color: #00000 vertical-align:center;
+            padding: 5;
+            font-size: 14px;
+        }
+
+
+    /*content-detail*/
+    .content-detail > table {
+        background-color: #ffffff;
+        border-collapse: collapse;
+        border-radius: .28571429rem;
+        border: 1px solid rgba(180,180,180);
+        table-layout: fixed;
+        width: 100%
+    }
+
+        .content-detail > table > thead > tr > th {
+            width: 100%;
+            position: sticky;
+            top: 0;
+            background-color: #ECF5FF;
+            border: 1px solid rgba(180,180,180);
+        }
+
+        .content-detail > table > tbody > tr > td {
+            text-align: center;
+            border: 1px solid rgba(180,180,180);
+        }
+
+    /* tab */
+    #tab {
+        width: 100%;
+        background: #ACD6FF;
+        border: solid 1px #ACD6FF;
+    }
+
+        /* 頁籤ul */
+        #tab > ul {
+            /* overflow: hidden; */
+            margin: 0;
+            padding: 10px 20px 0 20px;
+        }
+
+            #tab > ul > li {
+                list-style-type: none;
+            }
+
+                /* 頁籤上的文字 */
+                #tab > ul > li > a {
+                    text-decoration: none;
+                    font-size: 15px;
+                    color: #333;
+                    float: left;
+                    padding: 10px;
+                    margin-left: 5px;
+                }
+
+        /*頁籤div內容*/
+        #tab > div {
+            clear: both;
+            padding: 0 15px;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+    /*第一筆的底色*/
+    span:target ~ #tab > ul li:first-child a {
+        background: #ACD6FF;
+    }
+
+    span:target ~ #tab > div:first-of-type {
+        visibility: hidden;
+        height: 0;
+        padding: 0 15px;
+    }
+
+    /*頁籤變換&第一筆*/
+    span ~ #tab > ul li:first-child a,
+    #tab-1:target ~ #tab > ul li a[href$="#tab-1"],
+    #tab-2:target ~ #tab > ul li a[href$="#tab-2"],
+    #tab-3:target ~ #tab > ul li a[href$="#tab-3"],
+    #tab-4:target ~ #tab > ul li a[href$="#tab-4"] {
+        background: #fff;
+        border-radius: 5px 5px 0 0;
+    }
+
+        span ~ #tab > ul li:first-child a::before,
+        #tab-1:target ~ #tab > ul li a[href$="#tab-1"]::before,
+        #tab-2:target ~ #tab > ul li a[href$="#tab-2"]::before,
+        #tab-3:target ~ #tab > ul li a[href$="#tab-3"]::before,
+        #tab-4:target ~ #tab > ul li a[href$="#tab-4"]::before {
+            background-color: white;
+            height: 100%;
+        }
+
+    /*頁籤內容顯示&第一筆*/
+    span ~ #tab > div:first-of-type,
+    #tab-1:target ~ #tab > div.tab-content-1,
+    #tab-2:target ~ #tab > div.tab-content-2,
+    #tab-3:target ~ #tab > div.tab-content-3,
+    #tab-4:target ~ #tab > div.tab-content-4 {
+        visibility: visible;
+        height: 100%;
+        background: #fff;
+    }
+    /*
+    span {
+         display: none;
+    }
+    */
+    .tab-show {
+        display: none;
+    }
+</style>
+
+
+<style>
+    /*detailItem*/
+    #detailItem > td > input {
+        width: 80%;
+    }
+
+        #detailItem > td > input[type=number] {
+            width: 80%;
+            margin: 1;
+            border-radius: .28571429rem;
+            border: 1px solid rgba(180,180,180);
+            padding: 4 6;
+            width: 80%;
+            height: 30px;
+        }
+
+        #detailItem > td > input[type=date] {
+            width: 80%;
+            margin: 1;
+            border-radius: .28571429rem;
+            border: 1px solid rgba(180,180,180);
+            padding: 4 6;
+            width: 80%;
+            height: 30px;
+        }
+
+
+    /*POContent*/
+    #POContent {
+        width: 100%;
+    }
+
+        #POContent > table {
+            background-color: #ffffff;
+            border-collapse: collapse;
+            border-radius: 0.28571429rem;
+            border: 1px solid rgba(180,180,180);
+            table-layout: fixed;
+            width: 100%;
+            word-wrap: break-word;
+        }
+
+            #POContent > table > tbody > tr > th {
+                background-color: #ECF5FF;
+                border: 1px solid rgba(180,180,180);
+            }
+
+            #POContent > table > tbody > tr > td {
+                border: 1px solid rgba(180,180,180);
+            }
+
+                #POContent > table > tbody > tr > td > table {
+                    width: 100%;
+                }
+
+
+                    #POContent > table > tbody > tr > td > table > tbody > tr > td > input[type=text] {
+                        margin: 1;
+                        border-radius: .28571429rem;
+                        border: 1px solid rgba(180,180,180);
+                        padding: 4 6;
+                        width: 100%;
+                        height: 30px;
+                    }
+
+                    #POContent > table > tbody > tr > td > table > tbody > tr > td > input[type=number] {
+                        margin: 1;
+                        border-radius: .28571429rem;
+                        border: 1px solid rgba(180,180,180);
+                        padding: 4 6;
+                        width: 100%;
+                        height: 30px;
+                    }
+
+
+                    #POContent > table > tbody > tr > td > table > tfoot > tr > td > input {
+                        margin: 1;
+                        border-radius: .28571429rem;
+                        border: 1px solid rgba(180,180,180);
+                        padding: 4 6;
+                        width: 100%;
+                        height: 30px;
+                    }
+
+                    #POContent > table > tbody > tr > td > table > tfoot > tr > td > input {
+                        margin: 1;
+                        border-radius: .28571429rem;
+                        border: 1px solid rgba(180,180,180);
+                        padding: 4 6;
+                        width: 100%;
+                        height: 30px;
+                    }
+
+
+                    #POContent > table > tbody > tr > td > table > th {
+                        position: sticky;
+                        top: 0;
+                        background-color: #ECF5FF;
+                        border: 1px solid rgba(180,180,180);
+                    }
+
+                    #POContent > table > tbody > tr > td > table > td {
+                        border: 1px solid rgba(180,180,180);
+                        color: #00000 vertical-align:center;
+                        padding: 5;
+                        font-size: 14px;
+                    }
+
+        #POContent thead th {
+            background-color: #CCE8EB;
+        }
+
+        #POContent tr:nth-child(odd) {
+            background: #fff;
+        }
+
+        #POContent tr:nth-child(even) {
+            background: #F5FAFA;
+        }
+</style>
