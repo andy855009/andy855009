@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoWeb_Resource>
+<StringTable>
+  <I><C>TSignedList</C><S>Form signed</S></I>
+  <I><C>HeadMSG1</C><S>share</S></I>
+  <I><C>HeadMSG2</C><S>A signed form that meets the conditions</S></I>
+  <I><C>SerialID</C><S>Form Number</S></I>
+  <I><C>SignedProcessName</C><S>Sign-off steps</S></I>
+  <I><C>ArrivalTime</C><S>Form delivery time</S></I>
+  <I><C>Result</C><S>Sign-off results</S></I>
+  <I><C>ApproveTime</C><S>Signing time</S></I>
+  <I><C>Status</C><S>The current status of the form</S></I>
+  <I><C>ApplicantName</C><S>Applicant</S></I>
+  <I><C>ApplicantDeptName</C><S>Applicant Department</S></I>
+</StringTable>
+</AutoWeb_Resource>

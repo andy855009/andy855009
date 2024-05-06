@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoWeb_Resource>
+<StringTable>
+  <I><C>TSignedList</C><S>Mẫu đã ký</S></I>
+  <I><C>HeadMSG1</C><S>chia sẻ</S></I>
+  <I><C>HeadMSG2</C><S>Một hình thức đã ký đáp ứng các điều kiện</S></I>
+  <I><C>SerialID</C><S>Số mẫu</S></I>
+  <I><C>SignedProcessName</C><S>Các bước đăng xuất</S></I>
+  <I><C>ArrivalTime</C><S>Thời gian giao mẫu</S></I>
+  <I><C>Result</C><S>Kết quả đăng xuất</S></I>
+  <I><C>ApproveTime</C><S>Thời gian ký kết</S></I>
+  <I><C>Status</C><S>Trạng thái hiện tại của biểu mẫu</S></I>
+  <I><C>ApplicantName</C><S>người xin việc</S></I>
+  <I><C>ApplicantDeptName</C><S>Phòng ứng viên</S></I>
+</StringTable>
+</AutoWeb_Resource>

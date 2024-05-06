@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoWeb_Resource>
+<StringTable>
+  <I><C>RequisitionID</C><S>表单识别码</S></I>
+  <I><C>DiagramID</C><S>流程识别码</S></I>
+  <I><C>ApplicantDept</C><S>申请部门</S></I>
+  <I><C>ApplicantDeptName</C><S>申请部门</S></I>
+  <I><C>ApplicantID</C><S>申请人</S></I>
+  <I><C>ApplicantName</C><S>申请人</S></I>
+  <I><C>FillerID</C><S>填单人</S></I>
+  <I><C>FillerName</C><S>填单人</S></I>
+  <I><C>ApplicantDateTime</C><S>表单日期</S></I>
+  <I><C>Priority</C><S>重要性</S></I>
+  <I><C>DraftFlag</C><S>储存草稿</S></I>
+  <I><C>FlowActivated</C><S>送出启动流程</S></I>
+  <I><C>FORM_ID</C><S>表单编号</S></I>
+  <I><C>COMPANYNAME</C><S>公司名称</S></I>
+  <I><C>COMPANY_PREFIX_CODE</C><S>公司简称</S></I>
+  <I><C>COMPANY_CODE</C><S>公司代码</S></I>
+  <I><C>EXPENSE_CATEGORY</C><S>费用类型</S></I>
+  <I><C>EXPENSE_CATEGORY_COMMENT</C><S>离职人员类型</S></I>
+  <I><C>BUDGET_SURPLUS</C><S>请购预估费用</S></I>
+  <I><C>PO_MEMBERID</C><S>采购人员</S></I>
+  <I><C>PO_MEMBERNAME</C><S>采购人员</S></I>
+  <I><C>TOTAL_AMOUNT</C><S>总费用</S></I>
+  <I><C>MutiSign_name</C><S>会签人员</S></I>
+  <I><C>MutiSign_id</C><S>会签人员</S></I>
+  <I><C>MutiSign_button</C><S>选择</S></I>
+  <I><C>Num</C><S>项目</S></I>
+  <I><C>Product_Category</C><S>类别</S></I>
+  <I><C>Product_Name</C><S>品名</S></I>
+  <I><C>Product_Specification</C><S>规格</S></I>
+  <I><C>Product_Quantity</C><S>数量</S></I>
+  <I><C>Required_Delivery_Date</C><S>要求交货日期</S></I>
+  <I><C>Instructions_For_Use</C><S>用途说明</S></I>
+  <I><C>Pre_Budget</C><S>预估预算</S></I>
+  <I><C>PR_DeptID</C><S>请购单位</S></I>
+  <I><C>PR_DeptNAME</C><S>请购单位</S></I>
+  <I><C>PR_Dept_button</C><S>选择</S></I>
+  <I><C>company_code</C><S>公司代码</S></I>
+  <I><C>FORM_INFO</C><S>表单资讯</S></I>
+  <I><C>FORM_NAME_PR</C><S>请购单</S></I>
+  <I><C>FORM_NAME_PO</C><S>采购单</S></I>
+</StringTable>
+</AutoWeb_Resource>

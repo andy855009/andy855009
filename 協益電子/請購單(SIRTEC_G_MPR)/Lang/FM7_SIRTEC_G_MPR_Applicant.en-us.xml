@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoWeb_Resource>
+<StringTable>
+  <I><C>RequisitionID</C><S>Form identifier</S></I>
+  <I><C>DiagramID</C><S>Process identification code</S></I>
+  <I><C>ApplicantDept</C><S>Application sector</S></I>
+  <I><C>ApplicantDeptName</C><S>Application sector</S></I>
+  <I><C>ApplicantID</C><S>Applicant</S></I>
+  <I><C>ApplicantName</C><S>Applicant</S></I>
+  <I><C>FillerID</C><S>Person filling in the form</S></I>
+  <I><C>FillerName</C><S>Person filling in the form</S></I>
+  <I><C>ApplicantDateTime</C><S>Form date</S></I>
+  <I><C>Priority</C><S>importance</S></I>
+  <I><C>DraftFlag</C><S>Save draft</S></I>
+  <I><C>FlowActivated</C><S>Send startup process</S></I>
+  <I><C>FORM_ID</C><S>Form Number</S></I>
+  <I><C>COMPANYNAME</C><S>Company Name</S></I>
+  <I><C>COMPANY_PREFIX_CODE</C><S>Company abbreviation</S></I>
+  <I><C>COMPANY_CODE</C><S>Company code</S></I>
+  <I><C>EXPENSE_CATEGORY</C><S>Types of fee</S></I>
+  <I><C>EXPENSE_CATEGORY_COMMENT</C><S>Resigned personnel type</S></I>
+  <I><C>BUDGET_SURPLUS</C><S>Request estimated cost</S></I>
+  <I><C>PO_MEMBERID</C><S>Procurement staff</S></I>
+  <I><C>PO_MEMBERNAME</C><S>Procurement staff</S></I>
+  <I><C>TOTAL_AMOUNT</C><S>Total cost</S></I>
+  <I><C>MutiSign_name</C><S>Countersigning personnel</S></I>
+  <I><C>MutiSign_id</C><S>Countersigning personnel</S></I>
+  <I><C>MutiSign_button</C><S>Choose</S></I>
+  <I><C>Num</C><S>Project</S></I>
+  <I><C>Product_Category</C><S>Category</S></I>
+  <I><C>Product_Name</C><S>Product name</S></I>
+  <I><C>Product_Specification</C><S>Specification</S></I>
+  <I><C>Product_Quantity</C><S>Quantity</S></I>
+  <I><C>Required_Delivery_Date</C><S>Request delivery date</S></I>
+  <I><C>Instructions_For_Use</C><S>Instructions for use</S></I>
+  <I><C>Pre_Budget</C><S>Estimated budget</S></I>
+  <I><C>PR_DeptID</C><S>Purchase unit</S></I>
+  <I><C>PR_DeptNAME</C><S>Purchase unit</S></I>
+  <I><C>PR_Dept_button</C><S>Choose</S></I>
+  <I><C>company_code</C><S>Company code</S></I>
+  <I><C>FORM_INFO</C><S>form information</S></I>
+  <I><C>FORM_NAME_PR</C><S>Requisitions</S></I>
+  <I><C>FORM_NAME_PO</C><S>Purchase Order</S></I>
+</StringTable>
+</AutoWeb_Resource>

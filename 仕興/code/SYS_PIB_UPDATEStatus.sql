@@ -1,0 +1,25 @@
+USE [DSMDBTEST]
+GO
+/****** Object:  StoredProcedure [dbo].[SYS_PIB_UPDATEStatus]    Script Date: 2024/5/6 下午 04:38:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+/*合併資料狀態同步*/
+ALTER PROCEDURE [dbo].[SYS_PIB_UPDATEStatus] (@ID INT)
+AS	
+	DECLARE @Status NVARCHAR(50) = (SELECT Status FROM PIB WHERE ID=@ID)
+	DECLARE @CombinID NVARCHAR(50) = (SELECT CombinID FROM PIB WHERE ID=@ID)
+	IF @CombinID IS NOT NULL
+	BEGIN
+		UPDATE PIB SET Status=@Status WHERE CombinID=@CombinID
+	END
+
+
+
+
+
+
+
+
+

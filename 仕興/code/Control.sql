@@ -1,0 +1,4 @@
+--¦X¨Ö§¹¤u
+UPDATE PIB SET Status='Y',flag='N' WHERE CombinID IN (SELECT TOP 100 CombinID FROM PIB WHERE Status='Y' AND CombinID IS NOT NULL ORDER BY ID DESC)
+
+UPDATE PIB SET StandardWH=CONVERT(DECIMAL(18,1),View_StandardDataLst.VAL/View_StandardDataLst.People*PIB.Amount),StandardSP=CONVERT(DECIMAL(18,1),PIB.Amount/(CONVERT(DECIMAL(18,1),View_StandardDataLst.VAL/View_StandardDataLst.People*PIB.Amount))) FROM PIB INNER JOIN View_StandardDataLst ON PIB.PLine=View_StandardDataLst.PLine AND View_StandardDataLst.Model=(SELECT TOP 1 * FROM udf_Split(PIB.Model,' ')) AND PIB.P_ID=View_StandardDataLst.P_ID WHERE PIB.flag='Y' AND PIB.MSN NOT LIKE '%<br>%' AND (StandardWH='0' OR StandardWH IS NULL)
