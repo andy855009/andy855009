@@ -507,11 +507,11 @@ function checkRequired() {
 /** 表身卡控*/
 function checkDetailRequired() {
 	var errMsgArr = [];
+	var fieldArr = []
 	var checkMessage1 = '第{row}項{field} 不可空白';
 	$('[name=detailItem][detailtype=item]').each(function (i) {
-		var fieldArr = [];
 		var tr = $(this);
-		var ConlumnObj = ['Num', 'Product_Category', 'Product_Name', 'Product_Specification', 'Product_Quantity', 'Required_Delivery_Date', 'Instructions_For_Use', "Pre_Budget", "PR_DeptID"];
+		var ConlumnObj = ['Product_Category', 'Product_Name', 'Product_Name', 'Product_Quantity', 'Required_Delivery_Date', 'Required_Delivery_Date', 'Required_Delivery_Date', 'PR_DeptID'];
 		$.each(ConlumnObj, function (j, name) {
 			if (tr.find('[name=' + name + ']').val() == '') {
 				var display = $('[name=' + name + ']').attr('display');
