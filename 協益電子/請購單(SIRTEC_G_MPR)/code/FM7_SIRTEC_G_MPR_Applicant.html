@@ -1,14 +1,13 @@
-<!--include bpm.js-->
-<script src="Object/Lib/js/bpm.js"></script>
-
 <!--include Newtype_Global-->
 (-:NewTypeCom:Newtype_Global_JS:-)
 (-:NewTypeCom:Newtype_Global_JSDeco:-)
 
-
 <!-- include SIRTEC_G_MPR -->
 <!-- 即時更新 -->
-<!-- <script src="SIRTEC_G_MPR_JS.js?v=2"></script> -->
+<!--
+<script src="SIRTEC_G_MPR_JS.js?v=2"></script>
+-->
+
 <script type="text/javascript">
     document.write("<s" + "cript type='text/javascript' src='SIRTEC_G_MPR_JS.js?" + Math.random() + "'></s" + "cript>");
 </script>
@@ -17,7 +16,6 @@
 <link rel="stylesheet" href="Object/fontawesome/css/fontawesome.min.css">
 <script src="Object/fontawesome/js/fontawesome.min.js"></script>
 (-:NewTypeCom:Table_CSS:-)
-
 
 <!--jquery-te-->
 <!--<script src="Object/Lib/plugin/jquery-te-1.4.0/jquery-te-1.4.0.min.js" charset="utf-8"></script>-->
@@ -43,7 +41,7 @@
         </tr>
         <tr>
             <td align="center">
-                <h1>協益集團設備請購單</h1>
+                <h1 name='IdentifyName'>協益集團請購單</h1>
             </td>
         </tr>
 
@@ -64,7 +62,7 @@
                 <table>
                     <tr>
                         <th><font>(-:LS("FORM_ID"):-)</font></th>
-                        <td colspan="3"><input type="text" name="FORM_ID"></td>
+                        <td colspan="3"><input type="text" name="FORM_ID" hidden></td>
                         <th><font>(-:LS("ApplicantDateTime"):-)</font></th>
                         <td><input type="text" name="ApplicantDateTime"></td>
                     </tr>
@@ -177,13 +175,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr name="detailItem" id="detailItem">
+                        <tr name="detailItem">
                             <th style="width: 5%;text-align:center"><input type="checkbox" name="itemBox" class="default"></th>
                             <td><input type="text" name="Num" class="default"></td>
                             <td style="padding: 3px;"><input type='text' name='Product_Category' display='(-:LS("Product_Category"):-)' readonly hidden></td>
                             <td style="padding: 3px;"><input type='text' name="Product_Name" display='(-:LS("Product_Name"):-)'></td>
                             <td style="padding: 3px;"><input type='text' name="Product_Specification" display='(-:LS("Product_Specification"):-)'></td>
-                            <td style="padding: 3px;"><input type='text' name="Product_Quantity" display='(-:LS("Product_Quantity"):-)'></td>
+                            <td style="padding: 3px;"><input type='number' name="Product_Quantity" display='(-:LS("Product_Quantity"):-)'></td>
                             <td style="padding: 3px;"><input type='text' name="Required_Delivery_Date" id="Required_Delivery_Date" class="default" display='(-:LS("Required_Delivery_Date"):-)'></td>
                             <td style="padding: 3px;"><input type='text' name="Instructions_For_Use" display='(-:LS("Instructions_For_Use"):-)'></td>
                             <td style="padding: 3px;"><input type='number' name="Pre_Budget" display='(-:LS("Pre_Budget"):-)'></td>
